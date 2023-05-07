@@ -77,6 +77,10 @@ class SurveyService implements SurveyServiceInterface
 
     public function getForm(int $formId): ?Survey
     {
+        if ($formId == 0) {
+            return Survey::inRandomOrder()->first();
+        }
+
         return Survey::find($formId);
     }
 

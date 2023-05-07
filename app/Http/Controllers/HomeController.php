@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $response = Http::withToken(session('access_token'))->get(url('/api/v1/surveys/3'));
+        $response = Http::withToken(session('access_token'))->get(url('/api/v1/surveys/0'));
         $results = [];
 
         if ($response->successful()) {
